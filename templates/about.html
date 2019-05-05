@@ -16,26 +16,69 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="/">Xtreme Tic Tac Toe</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+		<a class="navbar-brand" href="/">Xtreme Tic Tac Toe</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="/">Play <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="../static/Description.pdf">How To</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="/about">About</a>
-	      </li>
-	    </ul>
-	  </div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Play <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="../static/Description.pdf">How To</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="/about">About</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 
-	Developed by Akshay's dads
+	<div class="container">
+		<div class="Box-body">
+			<article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-authors" class="anchor" aria-hidden="true" href="#authors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authors</h1>
+				<ul>
+					<li><a href="https://github.com/VAIBHAV-2303">Vaibhav Garg</a></li>
+					<li><a href="https://github.com/Anchit1999">Anchit Gupta</a></li>
+				</ul>
+				<h1><a id="user-content-algorithm" class="anchor" aria-hidden="true" href="#algorithm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Algorithm</h1>
+				<ul>
+					<li>Mini-Max algorithm</li>
+					<li>Move Ordering</li>
+					<li>Transposition Table</li>
+					<li>Comprehensive heuristic</li>
+				</ul>
+				<h1><a id="user-content-heuristic-psuedocode" class="anchor" aria-hidden="true" href="#heuristic-psuedocode"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Heuristic Psuedocode</h1>
+				<pre><code>
+if WON by maximizer:
+	return 1000
+if WON by minimizer:
+	return 1000
+
+if DRAW:
+	return 0
+
+value = 0
+
+&lt;!-- Big Board hueristic --&gt;
+for both the big boards:
+	value += (50/3) * (maximizer_count[1] - minimizer_count[1]) + (400/3) * (maximizer_count[2] - minimizer_count[2])
+
+Here, maximizer_count[x] refers to small boards won by maximizer consecutively x in a row or column or diagonally such that it is still possible for the the maximizer to win in that respective row or column or diagonal.
+
+&lt;!-- Small Board huersistic --&gt;
+for every small board that is yet to be conquered and is part of the above mentioned row or column or diagonal: 
+	value += 1*(max_num[1] - min_num[1]) + (25/9)*(max_num[2] - min_num[2])
+
+Here, max_num[x] refers to individual cells marked by maximizer consecutively x in a row or column or diagonally such that the remaining cells are yet to be marked.
+
+return value
+				</code></pre>
+			</article>
+		</div>
+	</div>
+</div>
 </body>
 </html>
