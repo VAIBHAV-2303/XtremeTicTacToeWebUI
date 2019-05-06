@@ -93,6 +93,19 @@
 							</div>
 						</div>
 					</div>
+					<br/>
+					<div class="container">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Difficulty
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#" onclick="senddiff(0)">Easy</a>
+								<a class="dropdown-item" href="#" onclick="senddiff(1)">Medium</a>
+								<a class="dropdown-item" href="#" onclick="senddiff(2)">Hard</a>
+							</div>
+						</div>
+					</div>
 					</br></br>
 					<table class="table">
 						<tr>
@@ -130,7 +143,14 @@
 		data = {};
 		data['mode'] = m;
 		$.post("/recievemode", JSON.stringify(data), function(){});	
-		setTimeout(ref, 3000);
+		setTimeout(ref, 500);
+	}
+
+	function senddiff(d){
+		data = {};
+		data['diff'] = d;
+		$.post("/recievediff", JSON.stringify(data), function(){});	
+		setTimeout(ref, 500);
 	}
 
 	function ref(){

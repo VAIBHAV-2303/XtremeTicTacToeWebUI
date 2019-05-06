@@ -1,16 +1,18 @@
-# Authors
+# Xtreme Tic Tac Toe
+
+## Authors
 
 * [Vaibhav Garg](https://github.com/VAIBHAV-2303)
 * [Anchit Gupta](https://github.com/Anchit1999)
 
-# Algorithm
+## Algorithm
 
 * Mini-Max algorithm
 * Move Ordering
 * Transposition Table
 * Comprehensive heuristic
 
-# Heuristic Psuedocode
+## Heuristic Psuedocode
 	
 	if WON by maximizer:
 		return 1000
@@ -37,3 +39,8 @@
 	return value
 
 
+## To Run
+
+```console
+bar@foo:~/$ python2 run.py 
+```

@@ -5,9 +5,9 @@ import copy
 
 class Team11():
 
-    def __init__(self):
+    def __init__(self, depth):
 
-        self.MAX_DEPTH = 0
+        self.MAX_DEPTH = depth
         self.hash_small_board_heuristic = np.zeros((3,3,3,3,3,3,3,3,3))
         self.hash_small_board_heuristic[:] = -1e6
         self.numOfMoves = 0

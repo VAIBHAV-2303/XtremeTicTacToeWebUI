@@ -2,7 +2,7 @@ from simulator import *
 from team11 import Team11
 from flask import Flask, render_template, request, redirect
 
-t11 = Team11()
+t11 = Team11(0)
 mine = 'x'
 his = 'o'
 old_move = (-1,-1,-1)
@@ -76,4 +76,14 @@ def recievemode():
 
 	return redirect('/')
 
-app.run(debug = True)
+@app.route('/recievediff', methods=['POST', 'GET'])
+def recievediff():
+
+	global curturn, old_move, t11, mine, his, game_board
+
+	data = request.get_json(force=True)
+	t11 = Team11(data['diff'])
+
+	return redirect('/')
+
+app.run(threaded = True)
